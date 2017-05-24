@@ -12,15 +12,22 @@ namespace TowerOfHanoi
         /// <param name="args">User should pass one argument which holds the input file's path.</param>
         static void Main(string[] args)
         {
-            // Game flow's file path should be passed as an argument.
-            if (args.Length != 1)
+            try
             {
-                throw new ArgumentOutOfRangeException("args");
+                // Game flow's file path should be passed as an argument.
+                if (args.Length != 1)
+                {
+                    throw new ArgumentOutOfRangeException("args");
+                }
+                string filePath = args[0];
+                GameFlow gameFlow = new TextFileGameFlow(filePath);
+                ConsoleView gameView = new ConsoleView(gameFlow);
+                gameView.Run();
             }
-            string filePath = args[0];
-            GameFlow gameFlow = new TextFileGameFlow(filePath);
-            ConsoleView gameView = new ConsoleView(gameFlow);
-            gameView.Run();
+            catch
+            {
+                Console.WriteLine("No");
+            }
         }
     }
 }
