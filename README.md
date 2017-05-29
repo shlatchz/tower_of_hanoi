@@ -1,6 +1,6 @@
 # Tower of Hanoi
 
-Implemented in C# with unit tests.
+Implemented with C# and includes unit tests.
 
 Unit tests require `Moq 4.7.9` NuGet Package, which will be downloaded upon compilation.
 (Click [here](https://www.nuget.org/packages/Moq/4.7.9/) for more info)
